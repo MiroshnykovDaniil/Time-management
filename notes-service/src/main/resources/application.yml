@@ -1,9 +1,9 @@
 spring:
   application:
-    name: notes-service
+    name: tasks-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/notes
+      uri: mongodb://localhost:27017/tasks
 
 server:
   port: 8081

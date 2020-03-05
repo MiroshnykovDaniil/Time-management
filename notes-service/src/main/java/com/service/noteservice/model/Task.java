@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 @Builder
 @Document(collection = "notes")
-public class Note {
+public class Task {
 
     @Id
     private String id;
@@ -22,4 +22,6 @@ public class Note {
     private String title;
     private String description;
     private Date date;
+
+    private String subjectId;
 }

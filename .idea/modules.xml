@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/notes-service/note-service.iml" filepath="$PROJECT_DIR$/notes-service/note-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subject-service/subject-service.iml" filepath="$PROJECT_DIR$/subject-service/subject-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notes-service/task-service.iml" filepath="$PROJECT_DIR$/notes-service/task-service.iml" />
     </modules>
   </component>
 </project>
