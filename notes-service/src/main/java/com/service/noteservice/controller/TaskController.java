@@ -6,7 +6,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.context.request.async.DeferredResult;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -61,6 +61,7 @@ public class TaskController {
                     existingTask.setDescription(task.getDescription());
                     existingTask.setDate(task.getDate());
                     existingTask.setTitle(task.getTitle());
+                    existingTask.setSubjectId(task.getSubjectId());
                     return taskRepository.save(existingTask);
                 })
                 .map(updateTask -> new ResponseEntity<>(updateTask, HttpStatus.OK)) //then save it to database and wrap in ResponceEntity
@@ -83,6 +84,12 @@ public class TaskController {
                 .flatMap(task -> taskRepository.delete(task))
                     .then(Mono.just(new ResponseEntity<Void>(HttpStatus.OK)))
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+
+    @GetMapping("/subject/{id}")
+    public Flux<Task> getTasksBySubjectId(@Valid @PathVariable String id){
+        return taskRepository.findAll(id);
     }
 
     // @todo Delete all
