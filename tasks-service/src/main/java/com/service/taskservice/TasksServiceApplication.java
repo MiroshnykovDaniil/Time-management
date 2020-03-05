@@ -1,4 +1,4 @@
-package com.service.noteservice;
+package com.service.taskservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

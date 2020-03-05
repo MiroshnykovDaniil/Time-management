@@ -1,6 +1,6 @@
 package com.service.subjectservice.service;
 
-import com.service.noteservice.model.Task;
+import com.service.taskservice.model.Task;
 
 import java.util.ArrayList;
 import java.util.List;

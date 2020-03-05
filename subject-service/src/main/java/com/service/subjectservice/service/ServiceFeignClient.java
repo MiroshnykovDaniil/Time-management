@@ -7,8 +7,7 @@ import feign.gson.GsonEncoder;
 import feign.hystrix.FallbackFactory;
 import feign.hystrix.HystrixFeign;
 import org.springframework.cloud.openfeign.FeignClient;
-import com.service.noteservice.model.Task;
-import feign.RequestLine;
+import com.service.taskservice.model.Task;
 
 import java.util.List;
 

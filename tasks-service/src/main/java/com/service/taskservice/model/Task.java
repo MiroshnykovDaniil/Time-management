@@ -1,9 +1,8 @@
-package com.service.noteservice.model;
+package com.service.taskservice.model;
 
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Generated;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
