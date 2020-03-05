@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: subjects-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/subjects
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
