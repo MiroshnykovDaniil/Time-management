@@ -61,6 +61,7 @@ public class TaskController {
                     existingTask.setDate(task.getDate());
                     existingTask.setTitle(task.getTitle());
                     existingTask.setSubjectId(task.getSubjectId());
+
                     return taskRepository.save(existingTask);
                 })
                 .map(updateTask -> new ResponseEntity<>(updateTask, HttpStatus.OK)) //then save it to database and wrap in ResponceEntity
