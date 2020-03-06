@@ -92,6 +92,14 @@ public class TaskController {
         return taskRepository.findAll(id);
     }
 
+    @DeleteMapping("/subject/{id}")
+    public Mono<ResponseEntity<Void>> deleteTasksBySubjectId(@PathVariable String id){
+        return taskRepository.findAll(id)
+                .flatMap(task -> taskRepository.delete(task))
+                .then(Mono.just(new ResponseEntity<Void>(HttpStatus.OK)))
+                .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
     // @todo Delete all
     // @todo Get all as Server sent events
     // @todo Get default value every second

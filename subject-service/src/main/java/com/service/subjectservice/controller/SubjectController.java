@@ -72,6 +72,10 @@ public class SubjectController {
 
     @DeleteMapping(path = "/delete/{id}")
     public Mono<ResponseEntity<Void>> deleteSubject(@PathVariable String id){
+        logger.info("Deleting subject with id: "+id);
+        logger.info("Deleting its tasks");
+        ServiceFeignClient.FeignHolder.create().deleteTasksBySubjectId(id);
+        logger.info("Deleting subject");
         return subjectRepository.findById(id) //call repository to find subject
                 .flatMap(existingSubject ->
                         subjectRepository.delete(existingSubject) // deleting subject, and returning 200 OK to show that delete was successful
@@ -79,5 +83,4 @@ public class SubjectController {
                 )
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND)); //or return 404 Not Found to say that subject was not found
     }
-
 }
